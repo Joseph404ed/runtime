@@ -18,25 +18,25 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
       with:
-        path: z-runtime
+        path: runtime
     
-    - name: Checkout z-core
+    - name: Checkout agent-core
       uses: actions/checkout@v3
       with:
-        repository: ZeroicAI/z-core
-        path: z-core
+        repository: RustyAI/agent-core
+        path: agent-core
     
-    - name: Checkout z-messaging
+    - name: Checkout messaging
       uses: actions/checkout@v3
       with:
-        repository: ZeroicAI/z-messaging
-        path: z-messaging
+        repository: RustyAI/messaging
+        path: messaging
     
-    - name: Checkout z-cognition
+    - name: Checkout cognition
       uses: actions/checkout@v3
       with:
-        repository: ZeroicAI/z-cognition
-        path: z-cognition
+        repository: RustyAI/cognition
+        path: cognition
     
     - name: Install Rust toolchain
       uses: dtolnay/rust-toolchain@stable
@@ -46,26 +46,26 @@ jobs:
     - name: Cache dependencies
       uses: Swatinem/rust-cache@v2
       with:
-        workspaces: z-runtime
+        workspaces: runtime
     
     - name: Check formatting
-      working-directory: z-runtime
+      working-directory: runtime
       run: cargo fmt --all -- --check
     
     - name: Build
-      working-directory: z-runtime
+      working-directory: runtime
       run: cargo build --verbose
     
     - name: Run Clippy
-      working-directory: z-runtime
+      working-directory: runtime
       run: cargo clippy --all-targets --all-features -- -D warnings
     
     - name: Run tests
-      working-directory: z-runtime
+      working-directory: runtime
       run: cargo test --verbose
     
     - name: Run examples
-      working-directory: z-runtime
+      working-directory: runtime
       run: |
         cargo run --example basic_runtime
         cargo run --example scheduled_agents
@@ -78,24 +78,24 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       with:
-        path: z-runtime
+        path: runtime
     - uses: actions/checkout@v3
       with:
-        repository: ZeroicAI/z-core
-        path: z-core
+        repository: RustyAI/agent-core
+        path: agent-core
     - uses: actions/checkout@v3
       with:
-        repository: ZeroicAI/z-messaging
-        path: z-messaging
+        repository: RustyAI/messaging
+        path: messaging
     - uses: actions/checkout@v3
       with:
-        repository: ZeroicAI/z-cognition
-        path: z-cognition
+        repository: RustyAI/cognition
+        path: cognition
     - uses: dtolnay/rust-toolchain@stable
     - uses: Swatinem/rust-cache@v2
       with:
-        workspaces: z-runtime
-    - working-directory: z-runtime
+        workspaces: runtime
+    - working-directory: runtime
       run: cargo test --verbose
 
   test-macos:
@@ -104,22 +104,22 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       with:
-        path: z-runtime
+        path: runtime
     - uses: actions/checkout@v3
       with:
-        repository: ZeroicAI/z-core
-        path: z-core
+        repository: RustyAI/agent-core
+        path: agent-core
     - uses: actions/checkout@v3
       with:
-        repository: ZeroicAI/z-messaging
-        path: z-messaging
+        repository: RustyAI/messaging
+        path: messaging
     - uses: actions/checkout@v3
       with:
-        repository: ZeroicAI/z-cognition
-        path: z-cognition
+        repository: RustyAI/cognition
+        path: cognition
     - uses: dtolnay/rust-toolchain@stable
     - uses: Swatinem/rust-cache@v2
       with:
-        workspaces: z-runtime
-    - working-directory: z-runtime
+        workspaces: runtime
+    - working-directory: runtime
       run: cargo test --verbose

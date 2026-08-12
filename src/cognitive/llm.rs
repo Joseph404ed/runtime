@@ -1,5 +1,5 @@
 use super::config::LlmConfig;
-use z_cognition::BeliefBase;
+use cognition::BeliefBase;
 use tracing::warn;
 
 /// Call an LLM with the question and belief context
@@ -7,17 +7,17 @@ pub async fn ask_llm(question: &str, config: &LlmConfig, beliefs: &BeliefBase) -
     let client = reqwest::Client::new();
 
     // Build context from existing beliefs
-    let mut context = String::from("Here are verified facts about ZeroicAI:\n");
+    let mut context = String::from("Here are verified facts about RustyAI:\n");
     for (i, belief) in beliefs.all().enumerate() {
         if i >= 10 { break; }
         context.push_str(&format!("- {}\n", belief.value()));
     }
 
     let system_prompt = format!(
-        "You are a knowledgeable assistant for ZeroicAI, a multi-agent framework built in Rust.\n\
+        "You are a knowledgeable assistant for RustyAI, a multi-agent framework built in Rust.\n\
          {}\n\
          Use ONLY the facts above to answer. If the facts don't cover the question, say so honestly.\n\
-         Always spell the name correctly: ZeroicAI.\n\
+         Always spell the name correctly: RustyAI.\n\
          Answer concisely in 1-3 sentences.",
         context
     );

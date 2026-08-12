@@ -32,5 +32,5 @@ pub use crate::tracing_agent::Tracer;
 // Error
 pub use crate::RuntimeError;
 
-// Re-export from core
-pub use z_core::prelude::*;
+// Re-export from agent-core
+pub use agent_core::prelude::*;

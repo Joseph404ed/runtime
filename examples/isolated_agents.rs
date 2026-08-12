@@ -1,4 +1,4 @@
-use z_runtime::prelude::*;
+use runtime::prelude::*;
 
 fn main() {
     println!("=== Isolated Agents Example ===\n");

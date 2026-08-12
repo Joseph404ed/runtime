@@ -1,4 +1,4 @@
-use z_runtime::prelude::*;
+use runtime::prelude::*;
 
 #[test]
 fn create_isolation_config() {

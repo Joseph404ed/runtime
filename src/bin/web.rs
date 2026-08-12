@@ -1,5 +1,5 @@
-use z_cognition::Rule;
-use z_runtime::CognitiveAgent;
+use cognition::Rule;
+use runtime::CognitiveAgent;
 use axum::{extract::State, http::StatusCode, response::Html, routing::{get, post}, Json, Router};
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
@@ -46,14 +46,14 @@ fn add_rules(agent: &mut CognitiveAgent) {
     agent.add_rule(Rule::new("greeting:greetings").with_condition("greetings").with_conclusion("greeting"));
     agent.add_rule(Rule::new("greeting:greeting").with_condition("greeting").with_conclusion("greeting"));
 
-    // -- What is ZeroicAI (general) --
-    // "zeroic" alone catches spaced variants: "Zeroic AI", "Zeroic AI A?", etc.
+    // -- What is RustyAI (general) --
+    // "zeroic" alone catches spaced variants: "Rusty AI", "Rusty AI A?", etc.
     agent.add_rule(Rule::new("topic:zeroic_name")
         .with_condition("zeroic")
-        .with_conclusion("what_is_zeroicai"));
+        .with_conclusion("what_is_rustyai"));
     agent.add_rule(Rule::new("topic:what_is")
-        .with_condition("what").with_condition("zeroicai")
-        .with_conclusion("what_is_zeroicai"));
+        .with_condition("what").with_condition("rustyai")
+        .with_conclusion("what_is_rustyai"));
 
     // -- Layman / simple explanation --
     agent.add_rule(Rule::new("topic:layman")
@@ -236,28 +236,28 @@ fn add_rules(agent: &mut CognitiveAgent) {
         .with_conclusion("open_source"));
 
     // -- Individual crates --
-    agent.add_rule(Rule::new("topic:z_core")
-        .with_condition("z-core").with_condition("core").with_condition("agentid")
+    agent.add_rule(Rule::new("topic:agent_core")
+        .with_condition("core").with_condition("agentcore").with_condition("agentid")
         .with_condition("agentstate").with_condition("trait")
-        .with_conclusion("z_core"));
+        .with_conclusion("agent_core"));
 
-    agent.add_rule(Rule::new("topic:z_messaging")
-        .with_condition("z-messaging").with_condition("mailbox").with_condition("router")
+    agent.add_rule(Rule::new("topic:messaging")
+        .with_condition("messaging").with_condition("mailbox").with_condition("router")
         .with_condition("channel").with_condition("delivery")
-        .with_conclusion("z_messaging"));
+        .with_conclusion("messaging"));
 
-    agent.add_rule(Rule::new("topic:z_cognition")
-        .with_condition("z-cognition").with_condition("cognition").with_condition("reasoning")
+    agent.add_rule(Rule::new("topic:cognition")
+        .with_condition("cognition").with_condition("cognition").with_condition("reasoning")
         .with_condition("beliefbase").with_condition("planner")
-        .with_conclusion("z_cognition"));
+        .with_conclusion("cognition"));
 
-    agent.add_rule(Rule::new("topic:z_patterns")
-        .with_condition("z-patterns").with_condition("organizational").with_condition("coordination")
-        .with_conclusion("z_patterns"));
+    agent.add_rule(Rule::new("topic:patterns")
+        .with_condition("patterns").with_condition("organizational").with_condition("coordination")
+        .with_conclusion("patterns"));
 
-    agent.add_rule(Rule::new("topic:z_runtime")
-        .with_condition("z-runtime").with_condition("execution").with_condition("engine")
-        .with_conclusion("z_runtime"));
+    agent.add_rule(Rule::new("topic:runtime")
+        .with_condition("runtime").with_condition("execution").with_condition("engine")
+        .with_conclusion("runtime"));
 
     // -- Circuit breaker --
     agent.add_rule(Rule::new("topic:circuit_breaker")
@@ -369,10 +369,10 @@ fn add_rules(agent: &mut CognitiveAgent) {
         .with_conclusion("defi"));
 
     // -- Examples repo --
-    agent.add_rule(Rule::new("topic:z_examples")
-        .with_condition("z-examples").with_condition("hello_agent").with_condition("cargo")
+    agent.add_rule(Rule::new("topic:examples")
+        .with_condition("examples").with_condition("hello_agent").with_condition("cargo")
         .with_condition("run").with_condition("hello").with_condition("runnable")
-        .with_conclusion("z_examples"));
+        .with_conclusion("examples"));
 
     // -- Planner / STRIPS --
     agent.add_rule(Rule::new("topic:planner")

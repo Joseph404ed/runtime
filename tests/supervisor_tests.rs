@@ -1,4 +1,4 @@
-use z_runtime::prelude::*;
+use runtime::prelude::*;
 use std::time::Duration;
 
 #[test]

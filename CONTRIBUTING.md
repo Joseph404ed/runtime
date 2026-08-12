@@ -1,4 +1,4 @@
-﻿# Contributing to z-runtime
+﻿# Contributing to runtime
 
 Thank you for your interest in contributing!
 

@@ -1,4 +1,4 @@
-use z_runtime::prelude::*;
+use runtime::prelude::*;
 use criterion::{black_box, criterion_group, criterion_main, Criterion};
 
 fn spawn_single_agent(c: &mut Criterion) {

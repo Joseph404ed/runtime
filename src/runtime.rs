@@ -1,7 +1,7 @@
 use crate::{RuntimeConfig, RuntimeError, RuntimeHandle};
 use crate::supervisor::{RestartPolicy, RestartStrategy, Supervisor};
-use z_core::{Agent, AgentContext, AgentId};
-use z_messaging::{Message, Performative, Router};
+use agent_core::{Agent, AgentContext, AgentId};
+use messaging::{Message, Performative, Router};
 use std::collections::HashMap;
 use std::sync::Arc;
 use tokio::sync::{watch, mpsc, RwLock, Mutex};
@@ -417,7 +417,7 @@ async fn deliver_outbox(
 #[cfg(test)]
 mod tests {
     use super::*;
-    use z_core::{Agent, AgentContext, AgentId, AgentError, AgentResult};
+    use agent_core::{Agent, AgentContext, AgentId, AgentError, AgentResult};
     use async_trait::async_trait;
     use std::sync::atomic::{AtomicU32, Ordering};
     use std::sync::{Arc, Mutex};

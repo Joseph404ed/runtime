@@ -167,12 +167,12 @@
     },
     {
       "key": "getting_started",
-      "value": "Getting started: (1) Add to Cargo.toml: agent-core and runtime from GitHub (git = 'https://github.com/RustyAI/agent-core', branch = 'main'). Add tokio with features=['full'] and async-trait. (2) Define a struct and impl Agent on it — implement id(), initialize(), execute(), shutdown(). (3) In main: let rt = Runtime::with_config(config); rt.spawn_with_policy(Box::new(agent), 'my-agent', RestartPolicy::OnFailure).await; rt.run().await. See examples for working code.",
+      "value": "Getting started: (1) Add to Cargo.toml: agent-core and runtime from GitHub (git = 'https://github.com/RustyAIFW/agent-core', branch = 'main'). Add tokio with features=['full'] and async-trait. (2) Define a struct and impl Agent on it — implement id(), initialize(), execute(), shutdown(). (3) In main: let rt = Runtime::with_config(config); rt.spawn_with_policy(Box::new(agent), 'my-agent', RestartPolicy::OnFailure).await; rt.run().await. See examples for working code.",
       "certainty": 1.0
     },
     {
       "key": "installation",
-      "value": "Add to Cargo.toml:\n\n[dependencies]\nagent-core = { git = 'https://github.com/RustyAI/agent-core', branch = 'main' }\nruntime = { git = 'https://github.com/RustyAI/runtime', branch = 'main' }\ntokio = { version = '1', features = ['full'] }\nasync-trait = '0.1'\n\nFor cognition and patterns, add cognition and patterns the same way. Or use the facade crate:\nrustyai = { git = 'https://github.com/RustyAI/rustyai', branch = 'main' }",
+      "value": "Add to Cargo.toml:\n\n[dependencies]\nagent-core = { git = 'https://github.com/RustyAIFW/agent-core', branch = 'main' }\nruntime = { git = 'https://github.com/RustyAIFW/runtime', branch = 'main' }\ntokio = { version = '1', features = ['full'] }\nasync-trait = '0.1'\n\nFor cognition and patterns, add cognition and patterns the same way. Or use the facade crate:\nrustyai = { git = 'https://github.com/RustyAIFW/rustyai', branch = 'main' }",
       "certainty": 1.0
     },
     {
@@ -182,7 +182,7 @@
     },
     {
       "key": "examples",
-      "value": "The examples repo (github.com/RustyAI/examples) has working, runnable examples:\n• hello_agent — minimal Agent trait implementation\n• cognitive_agent — BDI reasoning with BeliefBase and ReasoningEngine\n• market_pattern — auction between buyer and seller agents\n• swarm_pattern — decentralized flocking with emergent behavior\n• supervised_agents — OnFailure and ExponentialBackoff restart policies\n• full_system — all 5 crates wired together in one program\nRun any example: cargo run --example <name>",
+      "value": "The examples repo (github.com/RustyAIFW/examples) has working, runnable examples:\n• hello_agent — minimal Agent trait implementation\n• cognitive_agent — BDI reasoning with BeliefBase and ReasoningEngine\n• market_pattern — auction between buyer and seller agents\n• swarm_pattern — decentralized flocking with emergent behavior\n• supervised_agents — OnFailure and ExponentialBackoff restart policies\n• full_system — all 5 crates wired together in one program\nRun any example: cargo run --example <name>",
       "certainty": 1.0
     },
     {
@@ -192,7 +192,7 @@
     },
     {
       "key": "deployment",
-      "value": "RustyAI agents deploy anywhere Rust binaries run. The live chat at rustyai.xyz runs on Railway — the runtime web binary is deployed as a Docker container (Railway auto-detects the Cargo.toml). Environment variables: PORT (server port), ANTHROPIC_API_KEY (LLM fallback key), CLAUDE_MODEL (optional model override). For multi-agent production systems, each agent group can run as a separate Railway service communicating over TCP.",
+      "value": "RustyAI agents deploy anywhere Rust binaries run. The live chat at www.rustyaifw.xyz runs on Railway — the runtime web binary is deployed as a Docker container (Railway auto-detects the Cargo.toml). Environment variables: PORT (server port), ANTHROPIC_API_KEY (LLM fallback key), CLAUDE_MODEL (optional model override). For multi-agent production systems, each agent group can run as a separate Railway service communicating over TCP.",
       "certainty": 1.0
     },
     {
@@ -247,27 +247,27 @@
     },
     {
       "key": "xbot",
-      "value": "RustyAI xBot is a live application running on X/Twitter — the first production proof that the framework works. It's a CognitiveAgent that uses BeliefBase, ReasoningEngine, and tokio-cron-scheduler to generate and post content about RustyAI. The same agent runs locally for replies and on a cron schedule for posts. Follow @RustyAI on X to see it in action.",
+      "value": "RustyAI xBot is a live application running on X/Twitter — the first production proof that the framework works. It's a CognitiveAgent that uses BeliefBase, ReasoningEngine, and tokio-cron-scheduler to generate and post content about RustyAI. The same agent runs locally for replies and on a cron schedule for posts. Follow @RustyAIFwk on X to see it in action.",
       "certainty": 1.0
     },
     {
       "key": "open_source",
-      "value": "RustyAI is fully open source. All crates — agent-core, messaging, cognition, patterns, runtime, rustyai, examples, docs — are on GitHub at github.com/RustyAI. Dual-licensed under MIT and Apache-2.0. Contributions are welcome: open issues, submit PRs, improve documentation, add examples, or help write benchmarks.",
+      "value": "RustyAI is fully open source. All crates — agent-core, messaging, cognition, patterns, runtime, rustyai, examples, docs — are on GitHub at github.com/RustyAIFW. Dual-licensed under MIT and Apache-2.0. Contributions are welcome: open issues, submit PRs, improve documentation, add examples, or help write benchmarks.",
       "certainty": 1.0
     },
     {
       "key": "github",
-      "value": "RustyAI GitHub organization: https://github.com/RustyAI. Repositories: RustyAI/agent-core, RustyAI/messaging, RustyAI/cognition, RustyAI/patterns, RustyAI/runtime, RustyAI/rustyai (facade), RustyAI/examples (runnable examples), RustyAI/docs (mdBook documentation), RustyAI/xbot (the Twitter bot). All open source, MIT + Apache-2.0.",
+      "value": "RustyAI GitHub organization: https://github.com/RustyAIFW. Repositories: RustyAI/agent-core, RustyAI/messaging, RustyAI/cognition, RustyAI/patterns, RustyAI/runtime, RustyAI/rustyai (facade), RustyAI/examples (runnable examples), RustyAI/docs (mdBook documentation), RustyAI/xbot (the Twitter bot). All open source, MIT + Apache-2.0.",
       "certainty": 1.0
     },
     {
       "key": "community",
-      "value": "Join the RustyAI community: GitHub at github.com/RustyAI to file issues and contribute code, and X/Twitter @RustyAI for updates and announcements. The framework is in active development — your feedback directly shapes what gets built next. Star the repos to stay updated.",
+      "value": "Join the RustyAI community: GitHub at github.com/RustyAIFW to file issues and contribute code, and X/Twitter @RustyAIFwk for updates and announcements. The framework is in active development — your feedback directly shapes what gets built next. Star the repos to stay updated.",
       "certainty": 1.0
     },
     {
       "key": "owner",
-      "value": "RustyAI was created by Daniel, a full-stack developer based in the USA. He designed the framework architecture from the ground up, built all five core crates in Rust, and is leading the project toward a stable 1.0 release. Find him on GitHub and X/Twitter at @pycogram, and follow the project at github.com/RustyAI.",
+      "value": "RustyAI was created by Daniel, a full-stack developer based in the USA. He designed the framework architecture from the ground up, built all five core crates in Rust, and is leading the project toward a stable 1.0 release. Find him on GitHub and X/Twitter at @pycogram, and follow the project at github.com/RustyAIFW.",
       "certainty": 1.0
     },
     {
@@ -307,12 +307,12 @@
     },
     {
       "key": "docs",
-      "value": "RustyAI documentation: Main website at rustyai.xyz, getting-started guide at rustyai.xyz/docs/getting-started, crate docs at rustyai.xyz/crates, and mdBook reference docs in the RustyAI/docs repo. Runnable examples are in RustyAI/examples on GitHub — each example is a complete working program you can run with cargo run --example <name>.",
+      "value": "RustyAI documentation: Main website at www.rustyaifw.xyz, getting-started guide at www.rustyaifw.xyz/docs/getting-started, crate docs at www.rustyaifw.xyz/crates, and mdBook reference docs in the RustyAI/docs repo. Runnable examples are in RustyAI/examples on GitHub — each example is a complete working program you can run with cargo run --example <name>.",
       "certainty": 1.0
     },
     {
       "key": "status",
-      "value": "Current status: All 5 core crates are implemented and compiling — agent-core, messaging, cognition (with real BFS planner and BDI deliberation), patterns (with runtime bridge), runtime (with Supervisor wired in). In Phase 2 stabilization: API review, test coverage, benchmarks, and documentation in progress. The live chat at rustyai.xyz is running in production on Railway. Targeting stable 1.0.",
+      "value": "Current status: All 5 core crates are implemented and compiling — agent-core, messaging, cognition (with real BFS planner and BDI deliberation), patterns (with runtime bridge), runtime (with Supervisor wired in). In Phase 2 stabilization: API review, test coverage, benchmarks, and documentation in progress. The live chat at www.rustyaifw.xyz is running in production on Railway. Targeting stable 1.0.",
       "certainty": 1.0
     },
     {
